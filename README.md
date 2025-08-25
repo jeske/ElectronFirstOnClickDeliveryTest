@@ -2,7 +2,9 @@
 
 ## Purpose
 
-This minimal Electron application was created to test a suspected bug where Electron appeared to "eat" the first `onclick` event after application launch, while `onmousedown` events were working correctly from the start.
+This minimal Electron application was created to investigate a bug where the first `onclick` event after application launch in an Electron container is being eaten, while `onmousedown` events were working correctly from the start. 
+
+The theory was that perhaps electron was eating this initial on-click. This small test shows Electron is working perfectly, and is not eating initial onclick events. Thus the source of the bug must be higher in the stack. (The app is using Angular, and so it is possibly but not proven to be some kind of angular/DOM interaction) 
 
 ## Suspected Bug Description
 
