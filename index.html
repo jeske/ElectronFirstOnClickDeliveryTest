@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectronFirstLaunchEatsFIrstOnClickEvent</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Info/Explanation Section -->
+    <div class="info-section">
+        <h1>Electron First Click Bug Demonstration</h1>
+        <p class="description">
+            <strong>BUG:</strong> On first launch of Electron, the first <code>onclick</code> event is not delivered (Electron "eats" it), 
+            while the first <code>onmousedown</code> event works correctly.
+        </p>
+        <p class="instructions">
+            <strong>To reproduce:</strong><br>
+            1. Launch the app fresh (close and reopen if needed)<br>
+            2. Click the LEFT button (onclick) - Notice it won't fire on first click<br>
+            3. Click the LEFT button again - Now it works<br>
+            4. Close and relaunch the app<br>
+            5. Click the RIGHT button (onmousedown) - It works on first click!
+        </p>
+    </div>
+
+    <!-- Window State Display -->
+    <div class="window-state">
+        <h2>Window State</h2>
+        <div class="state-display">
+            <span class="state-label">Document has focus:</span>
+            <span id="document-focus" class="state-value">checking...</span>
+        </div>
+        <div class="state-display">
+            <span class="state-label">Window is active:</span>
+            <span id="window-active" class="state-value">checking...</span>
+        </div>
+        <div class="state-display">
+            <span class="state-label">Document visibility:</span>
+            <span id="document-visibility" class="state-value">checking...</span>
+        </div>
+    </div>
+
+    <!-- Button Container -->
+    <div class="button-container">
+        <div class="button-wrapper">
+            <button id="onclick-button" class="test-button onclick-btn">
+                Click Me<br>
+                <small>(onclick handler)</small>
+            </button>
+            <div class="button-info">Uses standard onclick event</div>
+        </div>
+
+        <div class="button-wrapper">
+            <button id="onmousedown-button" class="test-button onmousedown-btn">
+                Click Me<br>
+                <small>(onmousedown handler)</small>
+            </button>
+            <div class="button-info">Uses onmousedown event</div>
+        </div>
+    </div>
+
+    <!-- Log Region -->
+    <div class="log-section">
+        <div class="log-header">
+            <h2>Event Log</h2>
+            <button id="clear-log" class="clear-button">Clear Log</button>
+        </div>
+        <div id="log-container" class="log-container">
+            <div class="log-entry log-info">Waiting for events...</div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>

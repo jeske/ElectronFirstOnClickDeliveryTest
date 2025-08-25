@@ -1,0 +1,24 @@
+{
+  "name": "electron-first-launch-eats-first-onclick-event",
+  "version": "1.0.0",
+  "description": "Minimal Electron app demonstrating that the first onclick event is not delivered on first launch, while onmousedown works correctly",
+  "main": "main-electron.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "electron",
+    "bug",
+    "onclick",
+    "onmousedown",
+    "event",
+    "first-launch"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "electron": "^37.3.1"
+  }
+}

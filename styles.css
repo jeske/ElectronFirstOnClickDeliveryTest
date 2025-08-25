@@ -1,0 +1,297 @@
+/* Styles for Electron First Click Bug Demonstration */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 10px;
+    color: #333;
+}
+
+/* Info Section */
+.info-section {
+    background: white;
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info-section h1 {
+    color: #764ba2;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.info-section .description {
+    background: #fff3cd;
+    border-left: 3px solid #ffc107;
+    padding: 6px 10px;
+    margin-bottom: 8px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.info-section .instructions {
+    background: #e8f4fd;
+    border-left: 3px solid #2196f3;
+    padding: 6px 10px;
+    border-radius: 3px;
+    line-height: 1.4;
+    font-size: 13px;
+}
+
+.info-section code {
+    background: #f0f0f0;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    color: #d63384;
+}
+
+/* Window State Display */
+.window-state {
+    background: white;
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.window-state h2 {
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.state-display {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 4px 8px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.state-label {
+    font-weight: 600;
+    margin-right: 10px;
+    min-width: 150px;
+}
+
+.state-value {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.state-value.active {
+    background: #28a745;
+    color: white;
+}
+
+.state-value.inactive {
+    background: #dc3545;
+    color: white;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.button-wrapper {
+    text-align: center;
+}
+
+.test-button {
+    width: 180px;
+    height: 70px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.test-button small {
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+    opacity: 0.9;
+}
+
+.onclick-btn {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+}
+
+.onclick-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 87, 108, 0.5);
+}
+
+.onmousedown-btn {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+}
+
+.onmousedown-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79, 172, 254, 0.5);
+}
+
+.test-button.clicked {
+    animation: click-pulse 0.3s ease;
+}
+
+@keyframes click-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+.button-info {
+    margin-top: 6px;
+    font-size: 12px;
+    color: white;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 3px 8px;
+    border-radius: 4px;
+    backdrop-filter: blur(10px);
+}
+
+/* Log Section */
+.log-section {
+    background: white;
+    border-radius: 8px;
+    padding: 12px 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-height: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.log-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.log-header h2 {
+    color: #333;
+    font-size: 16px;
+}
+
+.clear-button {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background 0.3s ease;
+}
+
+.clear-button:hover {
+    background: #5a6268;
+}
+
+.log-container {
+    flex: 1;
+    overflow-y: auto;
+    background: #f8f9fa;
+    border-radius: 4px;
+    padding: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+}
+
+.log-entry {
+    padding: 3px 6px;
+    margin-bottom: 1px;
+    border-radius: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.log-info {
+    background: #e7f3ff;
+    color: #004085;
+}
+
+.log-success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.log-click {
+    background: #ffe0ec;
+    color: #a91e4c;
+    font-weight: bold;
+}
+
+.log-mousedown {
+    background: #d1ecf1;
+    color: #0c5460;
+    font-weight: bold;
+}
+
+.log-warning {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.log-focus {
+    background: #e2e3e5;
+    color: #383d41;
+}
+
+.log-visibility {
+    background: #f4e4ff;
+    color: #6610f2;
+}
+
+.log-debug {
+    background: #f0f0f0;
+    color: #666;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* Scrollbar styling */
+.log-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.log-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.log-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.log-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
